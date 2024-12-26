@@ -1,7 +1,8 @@
 // App.js
 import { useState } from "react";
-import Login from "./components/Login";
-import Signup from "./components/Signup";
+import Form from "./components/Form";
+import Login from "./components/assets/Login";
+import Signup from "./components/assets/Signup";
 
 export default function App() {
   const [isLoginVisible, setIsLoginVisible] = useState(true);
@@ -24,35 +25,38 @@ export default function App() {
         }`}
       />
 
-      <div className="relative flex w-full max-w-4xl h-3/4 bg-white bg-opacity-50 backdrop-blur-lg shadow-lg rounded-lg overflow-hidden">
+      <div className="relative flex w-full max-w-4xl bg-white bg-opacity-50 backdrop-blur-lg shadow-lg rounded-lg overflow-hidden">
         {/* Login Form */}
         <div
-          className={`w-1/2 flex items-center justify-center p-8 transition-all duration-700 ease-in-out ${
+          className={`flex-1 overflow-hidden transition-all duration-700 ease-in-out ${
             isLoginVisible
               ? "opacity-100 translate-x-0"
               : "opacity-0 -translate-x-10"
           }`}
         >
-          <Login />
+          <Form formType="login" />
         </div>
 
         {/* Signup Form */}
         <div
-          className={`w-1/2 flex items-center focus:outline-none justify-center p-8 transition-all duration-700 ease-in-out ${
+          className={`flex-1 flex items-center focus:outline-none justify-center transition-all duration-700 ease-in-out ${
             isLoginVisible
               ? "opacity-0 translate-x-10"
               : "opacity-100 translate-x-0"
           }`}
         >
-          <Signup />
+          <Form formType="signup" />
         </div>
 
         {/* Button Panel */}
         <div
-          className={`absolute inset-y-0 flex items-center justify-center w-1/2 transition-all duration-700 ease-in-out ${
+          className={`absolute inset-y-0 flex flex-col p-8 pt-0 w-1/2 transition-all duration-700 ease-in-out ${
             isLoginVisible ? "left-1/2" : "left-0 "
           }`}
         >
+          <div className="flex transition-all h-full -mb-6 items-center justify-center">
+            {isLoginVisible ? <Login /> : <Signup />}
+          </div>
           <button
             className="px-6 py-3 font-bold text-white bg-black rounded-lg shadow-md hover:bg-gray-800 focus:outline-none focus:ring-0"
             onClick={handleToggle}
