@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Icons from "./Icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faApple, faGoogle } from "@fortawesome/free-brands-svg-icons";
+import { faApple } from "@fortawesome/free-brands-svg-icons";
+import IconGoogle from "./assets/IconGoogle";
 
 const Form = ({ formType }) => {
   const [email, setEmail] = useState("");
@@ -34,7 +35,7 @@ const Form = ({ formType }) => {
 
       <div className="mb-4 flex flex-col gap-4">
         <button className="w-full py-2 px-4 text-black rounded-md flex items-center justify-center gap-2 border border-gray-300 hover:border-black focus:ring-2 focus:ring-black focus:ring-opacity-50">
-          <FontAwesomeIcon icon={faGoogle} size="xl" />
+          <IconGoogle />
           {formType === "login" ? "Sign In" : "Sign Up"} with Google
         </button>
         <button className="w-full py-2 px-4 text-black rounded-md flex items-center justify-center gap-2 border border-gray-300 hover:border-black focus:ring-2 focus:ring-black focus:ring-opacity-50">
@@ -88,7 +89,7 @@ const Form = ({ formType }) => {
 
         <button
           type="submit"
-          className="w-full py-2 px-4 font-bold bg-white text-black rounded-md border border-gray-300 hover:bg-[#2A2E34] hover:text-white focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-50 transition-colors duration-300 ease-out"
+          className="w-full py-2 px-4 text-white hover:text-black font-bold hover:bg-white bg-black rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-50 transition-colors duration-300 ease-out"
         >
           {formType === "login" ? "Sign In" : "Sign Up"}
         </button>
