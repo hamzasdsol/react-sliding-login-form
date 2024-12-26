@@ -13,12 +13,13 @@ export default function App() {
   return (
     <main className="relative flex items-center justify-center h-screen w-full overflow-hidden">
       <div
-        className={`absolute inset-0 transition-all duration-700 ease-in-out bg-gradient-to-r from-green-400 to-blue-500 transform ${
-          isLoginVisible ? "translate-x-0" : "-translate-x-full"
-        }`}
+        className={`absolute inset-0 transition-all duration-700 ease-in-out
+          bg-gradient-to-tr from-[#22c1c3] to-[#fdbb2d] transform ${
+            isLoginVisible ? "translate-x-0" : "-translate-x-full"
+          }`}
       />
       <div
-        className={`absolute inset-0 transition-all duration-700 ease-in-out bg-gradient-to-r from-purple-500 to-pink-400 transform ${
+        className={`absolute inset-0 transition-all duration-700 ease-in-out bg-gradient-to-r from-[#020024] via-[#090979] to-[#00d4ff] transform ${
           isLoginVisible ? "translate-x-full" : "translate-x-0"
         }`}
       />
